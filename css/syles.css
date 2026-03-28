@@ -1,0 +1,169 @@
+
+
+    :root {
+      --primary: #D4B06A;
+      --accent: #C7A892;
+      --bg: #FDF9F2;
+      --surface: #FFFFFF;
+      --text: #4A4038;
+      --muted: #8A7A6C;
+      --border: #EFE4D3;
+      --hero-gradient-1: #EFE4D3;
+      --hero-gradient-2: #D4B06A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    header {
+      background: linear-gradient(135deg, var(--hero-gradient-1), var(--hero-gradient-2));
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    /* VALUES GRID */
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .value {
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta input {
+      padding: 12px;
+      width: 250px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .cta button {
+      background: var(--primary);
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .cta button:hover {
+      background: #b89655;
+    }
+
+    .secondary-btn {
+      margin-top: 10px;
+      display: inline-block;
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .secondary-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* SOCIALS */
+.socials {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.socials h3 {
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #EFE4D3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #4A4038;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.social-link:hover {
+  background: #D4B06A;
+  color: white;
+  transform: translateY(-3px);
+}
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
