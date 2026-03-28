@@ -3,7 +3,7 @@ const form = document.getElementById("contactForm");
 const message = document.getElementById("formMessage");
 
 // Your Formspree endpoint
-const endpoint = "https://formspree.io/f/xpqozrkagit";
+const endpoint = "https://formspree.io/f/mreoblpp";
 
 form.addEventListener("submit", async function(event) {
     event.preventDefault();
