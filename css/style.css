@@ -175,3 +175,104 @@ img{
       font-size: 0.9rem;
     }
 
+
+
+/* DROPDOWN */
+.menu {
+  margin: 0;
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+  overflow: visible;
+  padding-right: 50px; /* room for arrow */
+}
+
+/* Arrow */
+/* ONLY dropdown cards get arrow */
+.dropdown::after {
+  content: "⌄";
+  position: absolute;
+
+  right: 20px;
+  top: 20px;
+
+  font-size: 2rem;
+  color: var(--muted);
+
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.dropdown.active::after {
+  transform: rotate(180deg);
+}
+/* Hidden by default (but animatable) */
+.dropdown-content {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+
+  margin-top: 10px;
+  padding: 15px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Show on hover (only if NOT clicked open) */
+.card:hover:not(.active) .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Stay open when clicked */
+.card.active .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.card {
+  position: relative;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  z-index: 10;
+
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+
+  transition: all 0.25s ease;
+
+  margin-top: 10px;
+  padding: 15px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Show on hover */
+.card:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Stay open after click */
+.card.active .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
