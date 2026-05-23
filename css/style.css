@@ -50,7 +50,16 @@ img{
     header p {
       max-width: 700px;
       margin: auto;
+      font-size:1.3rem;
     }
+
+    p {
+
+      margin: auto;
+      font-size:20px;
+      padding-bottom:10px
+    }
+
 
     /* LAYOUT */
     .container {
@@ -61,7 +70,7 @@ img{
 
     .card {
       background: var(--surface);
-      border: 1px solid var(--border);
+      border: 3px solid var(--border);
       border-radius: 12px;
       padding: 25px;
       margin-bottom: 25px;
@@ -69,7 +78,7 @@ img{
 
     h2 {
       margin-bottom: 10px;
-      font-size:large;
+      font-size:1.5rem;
     }
 
     /* VALUES GRID */
@@ -199,7 +208,7 @@ img{
   top: 20px;
 
   font-size: 2rem;
-  color: var(--muted);
+  color:var(--accent);
 
   transition: transform 0.3s ease;
 }
@@ -207,26 +216,6 @@ img{
 /* Rotate arrow when open */
 .dropdown.active::after {
   transform: rotate(180deg);
-}
-/* Hidden by default (but animatable) */
-.dropdown-content {
-  opacity: 0;
-  transform: translateY(-8px);
-  pointer-events: none;
-  transition: all 0.25s ease;
-
-  margin-top: 10px;
-  padding: 15px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-/* Show on hover (only if NOT clicked open) */
-.card:hover:not(.active) .dropdown-content {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
 /* Stay open when clicked */
@@ -257,9 +246,9 @@ img{
 
   margin-top: 10px;
   padding: 15px;
-
-  background: var(--surface);
-  border: 1px solid var(--border);
+  font-size: 1.3rem;;
+  background: var(--border);
+  border: 3px solid var(--muted);
   border-radius: 8px;
 }
 
@@ -275,4 +264,8 @@ img{
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+.dropdown:hover ~ .card,
+.dropdown.active ~ .card {
+  display: none;
 }
