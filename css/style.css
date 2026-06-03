@@ -269,3 +269,70 @@ img{
 .dropdown.active ~ .card {
   display: none;
 }
+
+/* Mobile dropdown */
+@media (max-width: 768px) {
+
+  .card {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dropdown::after {
+    content: "⌄";
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    font-size: 1.5rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotate arrow when open */
+  .card.active .dropdown::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-content {
+    position: static; /* pushes content down instead of floating */
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: none;
+    pointer-events: none;
+
+    margin-top: 10px;
+    padding: 0 15px;
+
+    background: var(--border);
+    border: 3px solid var(--muted);
+    border-radius: 8px;
+
+    transition:
+      max-height 0.3s ease,
+      opacity 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  /* Open state */
+  .card.active .dropdown-content {
+    max-height: 500px; /* adjust as needed */
+    opacity: 1;
+    pointer-events: auto;
+    padding: 15px;
+  }
+
+  /* Disable hover behavior on mobile */
+  .card:hover .dropdown-content {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 15px;
+  }
+
+  .card.active:hover .dropdown-content {
+    opacity: 1;
+    max-height: 500px;
+    padding: 15px;
+  }
+}
