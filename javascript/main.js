@@ -1,8 +1,9 @@
 
-  const cards = document.querySelectorAll(".card");
+document.querySelectorAll(".dropdown").forEach(dropdown => {
+  dropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("active");
-    });
+    const card = dropdown.closest(".card");
+    card.classList.toggle("active");
   });
+});
