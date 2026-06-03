@@ -317,7 +317,7 @@ img{
 
   /* Open state */
   .card.active .dropdown-content {
-    max-height: 500px; /* adjust as needed */
+    max-height: 900px; /* adjust as needed */
     opacity: 1;
     pointer-events: auto;
     padding: 15px;
