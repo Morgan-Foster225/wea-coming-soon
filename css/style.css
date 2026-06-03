@@ -275,7 +275,7 @@ img{
 
   /* Open state */
   .card.active .dropdown-content {
-    max-height: 900px; /* adjust as needed */
+    max-height: 1200px; /* adjust as needed */
     pointer-events: auto;
     
   
