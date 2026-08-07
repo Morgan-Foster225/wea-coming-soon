@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".dropdown").forEach(dropdown => {
-    dropdown.addEventListener("click", () => {
-      dropdown.closest(".card").classList.toggle("active");
+  document.querySelectorAll(".dropdown").forEach((dropdown) => {
+    const toggle = dropdown.querySelector(".menu");
+
+    toggle.addEventListener("click", () => {
+      const isOpen = dropdown.classList.toggle("active");
+      toggle.setAttribute("aria-expanded", String(isOpen));
     });
   });
 });

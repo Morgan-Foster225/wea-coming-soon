@@ -1,153 +1,250 @@
+/* ================= ROOT ================= */
+:root {
+  --primary: #C79A4B;
+  --primary-dark: #A87F3A;
+  --accent: #C7A892;
+  --bg: #FDF9F2;
+  --surface: #FFFFFF;
+  --text: #3A322B;
+  --muted: #8A7A6C;
+  --border: #EFE4D3;
+  --hero-gradient-1: #f3e5d0;
+  --hero-gradient-2: #d7b268;
 
-
-    :root {
-      --primary: #D4B06A;
-      --accent: #C7A892;
-      --bg: #FDF9F2;
-      --surface: #FFFFFF;
-      --text: #4A4038;
-      --muted: #8A7A6C;
-      --border: #EFE4D3;
-      --hero-gradient-1: #f3e5d0;
-      --hero-gradient-2: #d7b268;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Times New Roman', Times, serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-img{
-  width:350px;
-  padding:0;
-  margin:0;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
-    /* HERO */
-    header {
-      background: linear-gradient(135deg, var(--hero-gradient-1), var(--hero-gradient-2));
-     padding:30px; 
-      text-align: center;
-    }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    header h2 {
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    header p {
-      max-width: 700px;
-      margin: auto;
-      font-size:1.3rem;
-    }
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
 
-    p {
+p {
+  font-size: 1.05rem;
+}
 
-      margin: auto;
-      font-size:20px;
-      padding-bottom:10px
-    }
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(135deg, var(--hero-gradient-1), var(--hero-gradient-2));
+  padding: 60px 20px 70px;
+  text-align: center;
+}
 
+.hero .logo {
+  width: 220px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12));
+}
 
-    /* LAYOUT */
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-    }
+.hero h1 {
+  font-size: clamp(2.25rem, 5vw + 1rem, 3.5rem);
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
 
-    .card {
-      background: var(--surface);
-      border: 3px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 25px;
-    }
+.hero h2 {
+  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.5vw + 0.7rem, 1.4rem);
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+  color: var(--text);
+}
 
-    h2 {
-      margin-bottom: 10px;
-      font-size:1.5rem;
-    }
+.hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--text);
+  opacity: 0.85;
+}
 
-    /* VALUES GRID */
-    .values {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
+/* ================= LAYOUT ================= */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
 
-    .value {
-      padding: 15px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--bg);
-    }
+/* ================= CARDS ================= */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 20px rgba(58, 50, 43, 0.05);
+}
 
-    /* CTA */
-    .cta {
-      text-align: center;
-      margin-top: 40px;
-   
-    }
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .cta input {
-      padding: 12px;
-      width: 250px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-right: 10px;
-    }
+.card h2 i {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
 
-    .cta button {
-      background: var(--primary);
-      border: none;
-      padding: 12px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      color: white;
-      font-size: 1rem;
-      transition: 0.3s;
-        margin:20px;
-    }
+/* ================= VALUES GRID ================= */
+.values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
 
-    .cta button:hover {
-      background: #b89655;
-    }
+.value {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 10px;
+  background: var(--bg);
+  font-size: 0.98rem;
+}
 
-    .secondary-btn {
-      margin-top: 10px;
-      display: inline-block;
-      background: transparent;
-      border: 1px solid var(--primary);
-      color: var(--primary);
-    }
+.value strong {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  color: var(--text);
+}
 
-    .secondary-btn:hover {
-      background: var(--primary);
-      color: white;
-    }
+/* ================= DROPDOWN / ACCORDION ================= */
+.dropdown {
+  padding: 0;
+  overflow: hidden;
+}
 
-    /* SOCIALS */
+.dropdown .menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 30px;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: left;
+}
+
+.dropdown .menu span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown .menu i.fa-seedling {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.dropdown .chevron {
+  color: var(--muted);
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.dropdown.active .chevron {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.dropdown-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 30px;
+  transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease;
+}
+
+.dropdown-content p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.dropdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown.active .dropdown-content {
+  max-height: 600px;
+  opacity: 1;
+  padding: 0 30px 30px;
+}
+
+/* ================= CTA ================= */
+.cta {
+  text-align: center;
+  background: linear-gradient(135deg, var(--hero-gradient-1), var(--bg));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 30px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.cta h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  max-width: 480px;
+  margin: 0 auto 20px;
+  opacity: 0.85;
+}
+
+.cta-button {
+  background: var(--primary);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 18px rgba(199, 154, 75, 0.35);
+}
+
+.cta-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(199, 154, 75, 0.4);
+}
+
+/* ================= SOCIALS ================= */
 .socials {
   text-align: center;
-  margin-top: 30px;
-}
-
-.socials h3 {
-  margin-bottom: 15px;
 }
 
 .social-icons {
@@ -157,108 +254,64 @@ img{
 }
 
 .social-link {
-  width: 50px;
-  height: 50px;
-  background: #fff;
-  border: 1px solid #EFE4D3;
+  width: 48px;
+  height: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #4A4038;
-  font-size: 20px;
-  transition: 0.3s;
+  color: var(--text);
+  font-size: 18px;
+  transition: 0.25s ease;
 }
 
 .social-link:hover {
-  background: #D4B06A;
+  background: var(--primary);
   color: white;
+  border-color: var(--primary);
   transform: translateY(-3px);
 }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-
-
-/* DROPDOWN */
-.menu {
-  margin: 0;
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 25px 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
 }
 
-.card {
-  position: relative;
-  cursor: pointer;
-  overflow: visible;
-  padding-right: 50px; /* room for arrow */
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  .hero {
+    padding: 45px 16px 50px;
+  }
+
+  .hero .logo {
+    width: 170px;
+  }
+
+  .container {
+    padding: 35px 16px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .dropdown .menu {
+    padding: 22px;
+    font-size: 1.2rem;
+  }
+
+  .dropdown.active .dropdown-content {
+    padding: 0 22px 22px;
+  }
+
+  .cta {
+    padding: 30px 20px;
+  }
 }
-
-/* Arrow */
-/* ONLY dropdown cards get arrow */
-.dropdown::after {
-  content: "⌄";
-  position: absolute;
-
-  right: 20px;
-  top: 20px;
-
-  font-size: 2rem;
-  color:var(--accent);
-
-  transition: transform 0.3s ease;
-}
-
-/* Rotate arrow when open */
-.dropdown.active::after {
-  transform: rotate(180deg);
-}
-
-/* Stay open when clicked */
-.card.active .dropdown-content {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-.card {
-  position: relative;
-  cursor: pointer;
-  overflow: visible;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-
-  z-index: 10;
-
-  opacity: 0;
-  transform: translateY(-8px);
-  pointer-events: none;
-
-  transition: all 0.25s ease;
-
-  margin-top: 10px;
-  padding: 15px;
-  font-size: 1.3rem;;
-  background: var(--border);
-  border: 3px solid var(--muted);
-  border-radius: 8px;
-}
-/* Stay open after click */
-.card.active .dropdown-content {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-.dropdown:hover ~ .card,
-.dropdown.active ~ .card {
-  display: none;
-}
-
