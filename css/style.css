@@ -200,10 +200,68 @@ p {
   padding: 0 30px 30px;
 }
 
+/* ================= FLORAL BOTTOM SCENE ================= */
+.bottom-scene {
+  position: relative;
+}
+
+/* Sticky background trick: the layer pins to the viewport for the full
+   height of .bottom-scene, so the same photo stays in frame the whole
+   time you scroll through this section instead of stretching/cropping
+   across the section's full (much taller) content height. */
+.floral-layer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  margin-bottom: calc(-100vh - 1px);
+  background-image: url("../images/floral-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  will-change: transform;
+  transform: translateY(0);
+}
+
+.bottom-scene .container,
+.bottom-scene footer {
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-scene .container {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floral-layer {
+    transform: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ================= CTA ================= */
 .cta {
   text-align: center;
-  background: linear-gradient(135deg, var(--hero-gradient-1), var(--bg));
+  background: linear-gradient(135deg, rgba(243, 229, 208, 0.9), rgba(253, 249, 242, 0.9));
+  backdrop-filter: blur(2px);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 40px 30px;
